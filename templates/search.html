@@ -1,29 +1,32 @@
-<html>
-    <head></head>
-    <body>
-        <h1>{{ keyword }} 잡서치결과 페이지입니다.</h1>
-
-        <table>
-            <thead></thead>
-            <tbody>
-                <tr>
-                    <th>순번</th>
-                    <th>회사명</th>
-                    <th>공고제목</th>
-                    <th>회사위치</th>
-                    <th>상세보기</th>
-                </tr>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ keyword }} 채용 검색 | 잡픽</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{font-family:'Noto Sans KR',sans-serif;color:#172033;background:#f6f8fc;font-synthesis:none}*{box-sizing:border-box}body{margin:0}.topbar{height:72px;background:#fff;border-bottom:1px solid #e9edf4}.nav{max-width:1160px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;gap:42px}.brand{font-size:24px;font-weight:800;letter-spacing:-1.5px;color:#246bfe;text-decoration:none}.nav-links{display:flex;gap:26px;color:#596579;font-size:13px;font-weight:600}.nav-links a{color:inherit;text-decoration:none}.back{margin-left:auto;color:#657189;text-decoration:none;font-size:13px}.page{max-width:1060px;margin:0 auto;padding:35px 24px 76px}.crumb{color:#9aa3b2;font-size:12px;margin-bottom:20px}.crumb a{color:#78849a;text-decoration:none}.search-area{padding:26px 28px;background:#fff;border:1px solid #e9edf4;border-radius:13px}.search-area h1{font-size:20px;letter-spacing:-.6px;margin:0 0 17px}.searchform{display:flex;max-width:700px;gap:9px;padding:6px;border:1px solid #dfe5ef;border-radius:9px}.searchform input{min-width:0;flex:1;padding:0 12px;border:0;outline:0;font:500 14px 'Noto Sans KR',sans-serif}.searchform button{height:42px;padding:0 20px;border:0;border-radius:7px;background:#2869f6;color:white;font:700 13px 'Noto Sans KR',sans-serif;cursor:pointer}.search-meta{display:flex;align-items:center;justify-content:space-between;margin:32px 0 14px}.search-meta h2{font-size:17px;margin:0;letter-spacing:-.4px}.search-meta h2 strong{color:#2869f6}.search-meta span{font-size:12px;color:#8b95a6}.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px;align-items:start}.filters,.results{background:#fff;border:1px solid #e9edf4;border-radius:12px}.filters{padding:20px}.filters h3{margin:0 0 17px;font-size:14px}.filter-group{padding:15px 0;border-top:1px solid #eff1f5}.filter-group strong{display:block;font-size:12px;margin-bottom:10px}.filter-group span{display:block;color:#7e899c;font-size:12px;line-height:2}.results{overflow:hidden}.result-toolbar{padding:14px 20px;border-bottom:1px solid #edf0f5;display:flex;align-items:center;justify-content:space-between;color:#8993a4;font-size:12px}.result-toolbar strong{color:#303b50}.job{padding:21px 22px;border-bottom:1px solid #edf0f5;display:flex;justify-content:space-between;gap:16px}.job:last-child{border-bottom:0}.company{font-size:12px;color:#768198;margin-bottom:7px}.job h3{margin:0 0 12px;font-size:16px;line-height:1.5;letter-spacing:-.35px}.job h3 a{color:#202a3c;text-decoration:none}.job h3 a:hover{color:#2869f6}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{padding:4px 8px;border-radius:4px;background:#f3f5f8;color:#788398;font-size:10px}.location{font-size:11px;color:#8d97a7;margin-top:12px}.job-action{flex:0 0 auto;display:flex;align-items:center}.detail{padding:9px 13px;border:1px solid #dfe5ef;border-radius:6px;color:#526078;text-decoration:none;font-size:11px;font-weight:600;white-space:nowrap}.detail:hover{border-color:#2869f6;color:#2869f6}.empty{padding:70px 20px;text-align:center}.empty .symbol{font-size:32px;color:#b0bdd2}.empty h3{margin:12px 0 7px;font-size:16px}.empty p{margin:0;color:#8993a4;font-size:13px}.footer{text-align:center;padding:23px;border-top:1px solid #eaedf3;color:#a0a8b6;font-size:11px}@media(max-width:720px){.nav{padding:0 18px}.nav-links{display:none}.page{padding:24px 16px 55px}.search-area{padding:21px 17px}.searchform{gap:4px}.searchform button{padding:0 12px}.layout{grid-template-columns:1fr}.filters{display:none}.search-meta{margin-top:25px}.job{padding:18px 15px}.job h3{font-size:14px}.job-action{align-items:flex-start;padding-top:20px}.detail{padding:8px;font-size:10px}.result-toolbar{padding:12px 15px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="nav"><a class="brand" href="/">jobpick.</a><div class="nav-links"><a href="/">채용정보</a><a href="/?category=jobs">직무별 채용</a><a href="/?category=career">커리어 가이드</a></div><a class="back" href="/">← 홈으로</a></nav></header>
+  <main class="page">
+    <div class="crumb"><a href="/">홈</a>&nbsp; / &nbsp;채용정보 검색</div>
+    <section class="search-area"><h1>원하는 채용공고를 찾아보세요</h1><form class="searchform" action="/search" method="get"><input name="keyword" type="search" value="{{ keyword }}" placeholder="직무, 회사명, 키워드 검색" aria-label="검색어"><button type="submit">검색하기&nbsp;⌕</button></form></section>
+    <div class="search-meta"><h2><strong>“{{ keyword }}”</strong> 검색 결과</h2><span>최신 채용 정보</span></div>
+    <div class="layout">
+      <aside class="filters"><h3>검색 조건</h3><div class="filter-group"><strong>근무지역</strong><span>전체 지역　⌄</span></div><div class="filter-group"><strong>경력</strong><span>전체 경력　⌄</span></div><div class="filter-group"><strong>고용형태</strong><span>전체 고용형태　⌄</span></div><div class="filter-group"><strong>등록일</strong><span>전체 기간　⌄</span></div></aside>
+      <section class="results"><div class="result-toolbar"><span>인크루트 채용공고</span><span><strong>최신순</strong>　⌄</span></div>
         {% for index, job in jobs %}
-                <tr>
-                    <td>{{ index + 1 }}</td>
-                    <td>{{ job["company"] }}</td>
-                    <td>{{ job["title"] }}</td>
-                    <td>{{ job["location"] }}</td>
-                    <td>{{ job["link"] }}</td>
-                </tr>
-        {% endfor %} 
-            </tbody>
-        </table>
-
-    </body>
+        <article class="job"><div><div class="company">{{ job["company"] }}</div><h3><a href="{{ job['link'] }}" target="_blank" rel="noopener noreferrer">{{ job["title"] }}</a></h3><div class="tags"><span class="tag">채용중</span><span class="tag">상세 내용 확인</span></div><div class="location">⌖ &nbsp;{{ job["location"] }} &nbsp; · &nbsp; 공고 {{ index + 1 }}</div></div><div class="job-action"><a class="detail" href="{{ job['link'] }}" target="_blank" rel="noopener noreferrer">공고 보기&nbsp; ↗</a></div></article>
+        {% else %}
+        <div class="empty"><div class="symbol">⌕</div><h3>검색 결과가 없습니다</h3><p>다른 키워드로 다시 검색해보세요.</p></div>
+        {% endfor %}
+      </section>
+    </div>
+  </main><footer class="footer">jobpick. &nbsp; 당신의 다음 기회를 응원합니다.</footer>
+</body>
 </html>

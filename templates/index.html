@@ -1,10 +1,29 @@
-<html>
-    <head></head>
-    <body>
-        <h1>안녕하세요 잡스크래퍼입니다.</h1>
-        <form action="/search">
-            <input type="text" name="keyword" />
-            <button>검색하기</button>
-        </form>
-    </body>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>잡픽 | 원하는 일자리를 찾아보세요</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{font-family:'Noto Sans KR',sans-serif;color:#172033;background:#f6f8fc;font-synthesis:none}*{box-sizing:border-box}body{margin:0}.topbar{height:76px;background:#fff;border-bottom:1px solid #e9edf4}.nav{max-width:1160px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;gap:46px}.brand{font-size:25px;font-weight:800;letter-spacing:-1.5px;color:#246bfe;text-decoration:none}.nav-links{display:flex;gap:28px;color:#596579;font-size:14px;font-weight:600}.nav-links a{color:inherit;text-decoration:none}.account{margin-left:auto;color:#627087;font-size:13px}.hero{background:linear-gradient(120deg,#edf4ff 0%,#f3f7ff 55%,#f4f2ff 100%);padding:92px 24px 105px}.hero-inner{max-width:930px;margin:auto;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:30px;background:#fff;color:#356cf6;font-size:12px;font-weight:700;box-shadow:0 4px 16px #3159a012}.eyebrow i{width:7px;height:7px;background:#3c77ff;border-radius:50%}.hero h1{margin:22px 0 12px;font-size:42px;line-height:1.32;letter-spacing:-2px}.hero h1 em{font-style:normal;color:#2869f6}.hero p{margin:0;color:#758198;font-size:16px}.searchbox{display:flex;gap:10px;max-width:760px;margin:36px auto 0;padding:8px;background:#fff;border:1px solid #e7ebf2;border-radius:13px;box-shadow:0 12px 35px #24395c14}.searchbox input{flex:1;min-width:0;border:0;outline:0;padding:0 16px;font:500 15px 'Noto Sans KR',sans-serif;color:#202b3f}.searchbox input::placeholder{color:#a4adbc}.searchbox button{height:52px;padding:0 27px;border:0;border-radius:9px;background:#2869f6;color:#fff;font:700 14px 'Noto Sans KR',sans-serif;cursor:pointer}.searchbox button:hover{background:#1557e8}.popular{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:9px;margin-top:20px;color:#8590a3;font-size:12px}.popular a{padding:6px 11px;background:#ffffffa6;border:1px solid #e7ebf4;border-radius:20px;color:#657189;text-decoration:none}.content{max-width:1160px;margin:0 auto;padding:52px 24px 80px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.section-head h2{margin:0;font-size:20px;letter-spacing:-.6px}.section-head p{margin:6px 0 0;color:#8993a4;font-size:13px}.section-head a{color:#657189;text-decoration:none;font-size:13px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{min-height:155px;padding:23px;background:#fff;border:1px solid #edf0f5;border-radius:13px}.feature-icon{display:grid;place-items:center;width:37px;height:37px;margin-bottom:15px;border-radius:11px;background:#edf4ff;color:#3472f7;font-size:18px}.feature:nth-child(2) .feature-icon{background:#f2efff;color:#7958d9}.feature:nth-child(3) .feature-icon{background:#eaf9f2;color:#28a66c}.feature strong{display:block;font-size:15px}.feature span{display:block;margin-top:6px;color:#8993a4;font-size:12px}.footer{padding:25px;text-align:center;border-top:1px solid #eaedf3;color:#a0a8b6;font-size:11px}@media(max-width:700px){.topbar{height:64px}.nav{padding:0 18px}.nav-links{display:none}.hero{padding:65px 18px 72px}.hero h1{font-size:31px;letter-spacing:-1.4px}.hero p{font-size:14px}.searchbox{gap:5px}.searchbox input{padding:0 9px;font-size:13px}.searchbox button{height:48px;padding:0 15px}.content{padding:38px 18px 58px}.feature-grid{grid-template-columns:1fr}.feature{min-height:0}.account{font-size:12px}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="nav"><a class="brand" href="/">jobpick.</a><div class="nav-links"><a href="/">채용정보</a><a href="#popular">직무별 채용</a><a href="#guide">커리어 가이드</a></div><span class="account">내 커리어를 시작해보세요&nbsp; →</span></nav></header>
+  <main>
+    <section class="hero"><div class="hero-inner">
+      <span class="eyebrow"><i></i> 오늘의 커리어를 발견하세요</span>
+      <h1>당신에게 딱 맞는 <em>일자리</em>를<br>찾아보세요</h1>
+      <p>수천 개의 채용 공고 중에서 새로운 기회를 만나보세요.</p>
+      <form class="searchbox" action="/search" method="get"><input name="keyword" type="search" placeholder="직무, 회사명, 키워드를 입력하세요" aria-label="검색어" required><button type="submit">⌕&nbsp; 채용공고 검색</button></form>
+      <div class="popular" id="popular"><span>인기 검색어</span><a href="/search?keyword=파이썬">파이썬</a><a href="/search?keyword=마케팅">마케팅</a><a href="/search?keyword=디자이너">디자이너</a><a href="/search?keyword=신입">신입</a></div>
+    </div></section>
+    <section class="content" id="guide"><div class="section-head"><div><h2>더 나은 커리어를 위한 시작</h2><p>관심 있는 분야의 새로운 기회를 찾아보세요.</p></div><a href="/search?keyword=채용">공고 둘러보기&nbsp; →</a></div>
+      <div class="feature-grid"><article class="feature"><div class="feature-icon">⌕</div><strong>맞춤 채용 검색</strong><span>관심 키워드로 원하는 공고를 빠르게 찾아보세요.</span></article><article class="feature"><div class="feature-icon">✦</div><strong>다양한 직무 탐색</strong><span>새로운 분야와 기업의 기회를 한눈에 살펴보세요.</span></article><article class="feature"><div class="feature-icon">↗</div><strong>커리어의 다음 단계</strong><span>당신의 가능성을 펼칠 기회를 지금 만나보세요.</span></article></div>
+    </section>
+  </main><footer class="footer">jobpick. &nbsp; 당신의 다음 기회를 응원합니다.</footer>
+</body>
 </html>
