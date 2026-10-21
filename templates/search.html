@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <h1>{{ keyword }} 잡서치결과 페이지입니다.</h1>
+
+        <table>
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <th>순번</th>
+                    <th>회사명</th>
+                    <th>공고제목</th>
+                    <th>회사위치</th>
+                    <th>상세보기</th>
+                </tr>
+        {% for index, job in jobs %}
+                <tr>
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ job["company"] }}</td>
+                    <td>{{ job["title"] }}</td>
+                    <td>{{ job["location"] }}</td>
+                    <td>{{ job["link"] }}</td>
+                </tr>
+        {% endfor %} 
+            </tbody>
+        </table>
+
+    </body>
+</html>
